@@ -1,0 +1,56 @@
+@charset "ISO-8859-1";
+
+body {
+background-color:#1e2124;
+}
+h1 {
+color:white;
+text-align:center;
+}
+textarea:focus {
+border: none;
+overflow: auto;
+outline: none;
+
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+.error {
+	color:#DC143C;
+	font-size: 14px;
+}
+.tb {
+	background-color: #36393e;
+	border: none;
+	border-radius: 4px;
+	display: inline-block;
+}
+.tb:focus{
+border: none;
+overflow: auto;
+outline: none;
+}
+.button {
+background-color: #36393e;
+border: none;
+padding: 10px 16px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 4px;
+margin: 4px auto;
+}
+.button:hover {
+background-color:#282b30;
+transition: 0s;
+cursor:pointer;
+}
+html * {
+   color: #abb8c3;
+   font-family: Helvetica, sans-serif !important;
+}
+.wrapper {
+    text-align: center;
+}

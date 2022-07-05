@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+body {
+background-color:#1e2124;
+}
+h1 {
+color:white;
+text-align:center;
+}
+html * {
+   color: #abb8c3 !important;
+   font-family: Helvetica, sans-serif !important;
+}
+.wrapper {
+    text-align: center;
+}
+table {
+    margin: 0 auto;
+}
