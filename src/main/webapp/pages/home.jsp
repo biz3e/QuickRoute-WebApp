@@ -19,7 +19,7 @@
 		1 Queen St Auckland New Zealand,<BR>
 		Sky Tower Auckland New Zealand,<BR>
 		Mt Roskill Auckland New Zealand,<BR>
-		Hamiltion Auckland
+		Hamilton Auckland
 		</small><br>
 		<span class="error">${messages.locationsError}</span>
 		<textarea required name = "Locations" class = "tb" rows = "5" cols = "50"  placeholder = "Location name City Country, Location name City Country"></textarea>
