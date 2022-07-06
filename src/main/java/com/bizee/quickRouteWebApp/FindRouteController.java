@@ -32,7 +32,7 @@ public class FindRouteController {
 			Map<String, String> messages = new HashMap<String, String>();
 			mv.addObject("messages", messages);
 			if (e.getMessage().equals("Invalid Start Location")) {
-				messages.put("startLocationError", "Invalid start location<BR>");
+				messages.put("startLocationError", "Starting location must be part of locations entered<BR>");
 				mv.setViewName("home");
 			} else if (e.getMessage().equals("Invalid Location")) {
 				messages.put("locationsError", "Invalid location(s)<BR>");

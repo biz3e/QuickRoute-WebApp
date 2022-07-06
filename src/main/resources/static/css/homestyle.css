@@ -31,6 +31,9 @@ border: none;
 overflow: auto;
 outline: none;
 }
+::placeholder {
+   color: #A9A9A9;
+}
 .button {
 background-color: #36393e;
 border: none;
@@ -48,7 +51,7 @@ transition: 0s;
 cursor:pointer;
 }
 html * {
-   color: #abb8c3;
+   color: #A9A9A9;
    font-family: Helvetica, sans-serif !important;
 }
 .wrapper {

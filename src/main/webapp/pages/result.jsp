@@ -12,9 +12,9 @@
 	<div class = "wrapper">
 	<h3>The most efficient route is:</h3>
 		<table>
-			<c:forEach var="location" items="${path}">
+			<c:forEach var="location" items="${path}" varStatus="count">
 				<tr>
-				<td>${location}</td>
+				<td>${count.count}. ${location}</td>
 				</tr>
 			</c:forEach>
 		</table>
