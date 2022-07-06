@@ -10,7 +10,7 @@
 <body>
 	<div class = "wrapper">
 		<h1>Quick Route</h1>
-		<h3>Find the most efficient route to visit each location</h3>
+		<h3>Find the fastest route with multistops</h3>
 		<form action = "FindRoute">
 		Enter locations (Seperate each location with comma)<br>
 		<span class="error">${messages.locationsError}</span>
