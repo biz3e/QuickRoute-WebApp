@@ -35,3 +35,5 @@ build/
 Secrets.java
 
 /src/test
+
+*.env

@@ -14,7 +14,7 @@ public class ApiCom {
 	private static DistanceMatrix matrix;
 
 	public static void initialiseApiCom() {
-		context = new GeoApiContext.Builder().apiKey(System.getenv(API_KEY)).build();
+		context = new GeoApiContext.Builder().apiKey(System.getenv().get("API_KEY")).build();
 	}
 
 	public static GeoApiContext getContext() {
@@ -43,7 +43,7 @@ public class ApiCom {
 				return false;
 			}
 		} catch (Exception e) {
-			System.out.println("Failed");
+			System.out.println(System.getenv().get("API_KEY"));
 			return false;
 		}
 	}
