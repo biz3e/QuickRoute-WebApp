@@ -9,15 +9,12 @@ import com.google.maps.model.DistanceMatrixRow;
 import com.google.maps.model.FindPlaceFromText;
 import com.google.maps.model.TravelMode;
 
-import io.github.cdimascio.dotenv.Dotenv;
-
 public class ApiCom {
 	private static GeoApiContext context;
 	private static DistanceMatrix matrix;
 
 	public static void initialiseApiCom() {
-		Dotenv dotenv = Dotenv.configure().load();
-		context = new GeoApiContext.Builder().apiKey(dotenv.get("API_KEY")).build();
+		context = new GeoApiContext.Builder().apiKey(System.getenv("API_KEY")).build();
 	}
 
 	public static GeoApiContext getContext() {
