@@ -9,14 +9,12 @@ import com.google.maps.model.DistanceMatrixRow;
 import com.google.maps.model.FindPlaceFromText;
 import com.google.maps.model.TravelMode;
 
-import secrets.Secrets;
-
 public class ApiCom {
 	private static GeoApiContext context;
 	private static DistanceMatrix matrix;
 
 	public static void initialiseApiCom() {
-		context = new GeoApiContext.Builder().apiKey(Secrets.getApiKey()).build();
+		context = new GeoApiContext.Builder().apiKey(System.getenv(API_KEY)).build();
 	}
 
 	public static GeoApiContext getContext() {
