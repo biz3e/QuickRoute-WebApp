@@ -13,12 +13,12 @@
 		<h3>Find the fastest route for your multistop trip by car</h3>
 		<form action = "FindRoute">
 		Enter locations (Seperate each location with comma)<br>
-		Input your locations in the format: Suburb/Town/Address City Country<br>
+		Input your locations in the format: NameOfLocation City Country<br>
 		<span class="error">${messages.locationsError}</span>
-		<textarea required name = "Locations" class = "tb" rows = "5" cols = "50"  placeholder = "Suburb/Town/Address City Country, Suburb/Town/Address City Country"></textarea><br>
+		<textarea required name = "Locations" class = "tb" rows = "5" cols = "50"  placeholder = "LocationName City Country, LocationName City Country"></textarea><br>
 		Enter a starting location (Leave blank if not required)<br>
 		<span class="error">${messages.startLocationError}</span>
-		<input type = "text" class = "tb" size = "40" name = "StartLocation" autocomplete = "off" placeholder = "Suburb/Town/Address City Country"><br>
+		<input type = "text" class = "tb" size = "40" name = "StartLocation" autocomplete = "off" placeholder = "LocationName City Country"><br>
 		<input type = "submit" class = "button">
 		</form>
 	</div>
