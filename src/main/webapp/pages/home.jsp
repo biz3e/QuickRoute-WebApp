@@ -14,14 +14,21 @@
 		<form action = "FindRoute">
 		<div class = "locations">
 		Enter locations (Seperate each location with comma)<br>
-		<small>Input your locations in the format: LocationName City Country</small><br>
+		<small>Input your locations in the format: Location name City Country<BR>
+		Example:<BR>
+		1 Queen St Auckland New Zealand,<BR>
+		Sky Tower Auckland New Zealand,<BR>
+		Mt Roskill Auckland New Zealand,<BR>
+		Hamiltion Auckland
+		</small><br>
 		<span class="error">${messages.locationsError}</span>
-		<textarea required name = "Locations" class = "tb" rows = "5" cols = "50"  placeholder = "LocationName City Country, LocationName City Country"></textarea><br>
+		<textarea required name = "Locations" class = "tb" rows = "5" cols = "50"  placeholder = "Location name City Country, Location name City Country"></textarea>
+		<br>
 		</div>
 		<div class = "startLocation">
 		Enter a starting location (Leave blank if not required)<br>
 		<span class="error">${messages.startLocationError}</span>
-		<input type = "text" class = "tb" size = "40" name = "StartLocation" autocomplete = "off" placeholder = "LocationName City Country"><br>
+		<input type = "text" class = "tb" size = "40" name = "StartLocation" autocomplete = "off" placeholder = "Location name City Country"><br>
 		</div>
 		<div class="db">
 		<label for="TransportMethod">Transport method: </label><br>
