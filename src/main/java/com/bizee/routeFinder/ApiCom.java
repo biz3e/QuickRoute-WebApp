@@ -21,10 +21,22 @@ public class ApiCom {
 		return context;
 	}
 
-	public static DistanceMatrixRow[] getDistances(String[] origins, String[] destinations) {
+	public static DistanceMatrixRow[] getDistances(String[] origins, String[] destinations, String transportMethod) {
 		try {
-			matrix = DistanceMatrixApi.newRequest(getContext()).origins(origins).destinations(destinations)
-					.mode(TravelMode.DRIVING).await();
+			switch (transportMethod) {
+			case "DRIVING":
+				matrix = DistanceMatrixApi.newRequest(getContext()).origins(origins).destinations(destinations)
+						.mode(TravelMode.DRIVING).await();
+				break;
+			case "TRANSIT":
+				matrix = DistanceMatrixApi.newRequest(getContext()).origins(origins).destinations(destinations)
+						.mode(TravelMode.TRANSIT).await();
+				break;
+			case "WALKING":
+				matrix = DistanceMatrixApi.newRequest(getContext()).origins(origins).destinations(destinations)
+						.mode(TravelMode.WALKING).await();
+				break;
+			}
 		} catch (Exception e) {
 			System.out.println("Failed");
 			return null;

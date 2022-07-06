@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.commons.text.WordUtils;
+
 import com.bizee.ds.Graph;
 import com.bizee.ds.Node;
 import com.bizee.ds.Path;
@@ -18,13 +20,16 @@ public class FindRoute {
 	private List<String> places;
 	private boolean hasStart;
 	private String startPlace;
+	private String transportMethod;
 
-	public FindRoute(String places, String startPlace) throws IOException {
+	public FindRoute(String places, String startPlace, String transportMethod) throws IOException {
 		String[] placesArray = places.split(",");
 
+		this.transportMethod = transportMethod;
 		this.places = new ArrayList<>();
 		this.places = Arrays.asList(placesArray);
 		this.places.replaceAll(String::trim);
+		this.places.replaceAll(str -> str.toLowerCase());
 
 		ApiCom.initialiseApiCom();
 
@@ -36,16 +41,16 @@ public class FindRoute {
 
 		if (startPlace.isBlank()) {
 			hasStart = false;
-		} else if (this.places.contains(startPlace)) {
+		} else if (this.places.contains(startPlace.toLowerCase())) {
 			hasStart = true;
-			this.startPlace = startPlace;
+			this.startPlace = startPlace.toLowerCase();
 		} else {
 			throw new IOException("Invalid Start Location");
 		}
 	}
 
 	public String[] start() throws Exception {
-		distances = ApiCom.getDistances(getOrigins(), getDestinations());
+		distances = ApiCom.getDistances(getOrigins(), getDestinations(), transportMethod);
 
 		try {
 			graph = new Graph(places, distances);
@@ -70,10 +75,9 @@ public class FindRoute {
 
 		int i = 0;
 		for (Node<String> n : path) {
-			pathArray[i] = n.getLabel();
+			pathArray[i] = WordUtils.capitalizeFully(n.getLabel());
 			i++;
 		}
-
 		return pathArray;
 	}
 

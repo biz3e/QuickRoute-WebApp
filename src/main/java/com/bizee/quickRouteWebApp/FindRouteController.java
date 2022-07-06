@@ -16,7 +16,8 @@ public class FindRouteController {
 
 	@RequestMapping("FindRoute")
 	public ModelAndView findRoute(@RequestParam("Locations") String locations,
-			@RequestParam("StartLocation") String startLocation) {
+			@RequestParam("StartLocation") String startLocation,
+			@RequestParam("TransportMethod") String transportMethod) {
 		ModelAndView mv = new ModelAndView();
 
 		if (locations.isBlank()) {
@@ -24,9 +25,10 @@ public class FindRouteController {
 		}
 
 		try {
-			FindRoute route = new FindRoute(locations, startLocation);
+			FindRoute route = new FindRoute(locations, startLocation, transportMethod);
 			String[] path = route.start();
 			mv.addObject("path", path);
+			mv.addObject("transportMethod", transportMethod.toLowerCase());
 			mv.setViewName("result");
 		} catch (IOException e) {
 			Map<String, String> messages = new HashMap<String, String>();

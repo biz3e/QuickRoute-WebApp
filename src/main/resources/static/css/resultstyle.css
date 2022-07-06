@@ -3,20 +3,46 @@
 body {
 background-color:#1e2124;
 }
+
 h1 {
-color:white;
 text-align:center;
+margin-bottom: 0px;
 }
+
+h3{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
 html * {
-   color: #abb8c3 !important;
+   color: #A9A9A9 !important;
    font-family: Helvetica, sans-serif !important;
 }
 .wrapper {
     text-align: center;
 }
+
 table {
     margin: 0 auto;
 }
+
 td {
 	text-align: left;
+}
+
+.button {
+background-color: #36393e;
+border: none;
+padding: 10px 16px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 4px;
+margin: 4px auto;
+}
+.button:hover {
+background-color:#282b30;
+transition: 0s;
+cursor:pointer;
 }
