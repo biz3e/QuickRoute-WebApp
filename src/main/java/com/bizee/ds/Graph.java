@@ -7,22 +7,32 @@ import com.google.maps.model.DistanceMatrixRow;
 
 public class Graph {
 	protected List<Node<String>> nodes;
-	protected long[][] distanceMatrix;
 
-	public Graph(List<String> places, DistanceMatrixRow[] distances) {
+	public Graph(List<String> places, DistanceMatrixRow[] distances, String weightMethod) {
 		nodes = new ArrayList<>();
-		distanceMatrix = new long[places.size()][places.size()];
 
 		for (String place : places) {
 			nodes.add(new Node<>(place));
 		}
 
-		for (int i = 0; i < nodes.size(); i++) {
-			for (int j = 0; j < distances[i].elements.length; j++) {
-				if (i != j) {
-					Edge<Node<String>> edge = new Edge<>(nodes.get(i), nodes.get(j),
-							distances[i].elements[j].distance.inMeters);
-					nodes.get(i).addEdge(edge);
+		if (weightMethod.equals("DISTANCE")) {
+			for (int i = 0; i < nodes.size(); i++) {
+				for (int j = 0; j < distances[i].elements.length; j++) {
+					if (i != j) {
+						Edge<Node<String>> edge = new Edge<>(nodes.get(i), nodes.get(j),
+								distances[i].elements[j].distance.inMeters);
+						nodes.get(i).addEdge(edge);
+					}
+				}
+			}
+		} else if (weightMethod.equals("DURATION")) {
+			for (int i = 0; i < nodes.size(); i++) {
+				for (int j = 0; j < distances[i].elements.length; j++) {
+					if (i != j) {
+						Edge<Node<String>> edge = new Edge<>(nodes.get(i), nodes.get(j),
+								distances[i].elements[j].duration.inSeconds);
+						nodes.get(i).addEdge(edge);
+					}
 				}
 			}
 		}

@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.text.WordUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bizee.ds.Path;
 import com.bizee.routeFinder.FindRoute;
 
 @Controller
@@ -17,7 +19,8 @@ public class FindRouteController {
 	@RequestMapping("FindRoute")
 	public ModelAndView findRoute(@RequestParam("Locations") String locations,
 			@RequestParam("StartLocation") String startLocation,
-			@RequestParam("TransportMethod") String transportMethod) {
+			@RequestParam("TransportMethod") String transportMethod,
+			@RequestParam("WeightMethod") String weightMethod) {
 		ModelAndView mv = new ModelAndView();
 
 		if (locations.isBlank()) {
@@ -25,9 +28,13 @@ public class FindRouteController {
 		}
 
 		try {
-			FindRoute route = new FindRoute(locations, startLocation, transportMethod);
-			String[] path = route.start();
-			mv.addObject("path", path);
+			FindRoute route = new FindRoute(locations, startLocation, transportMethod, weightMethod);
+			Path path = route.start();
+
+			mv.addObject("path", path.toArray());
+			mv.addObject("pathCosts", path.getCostArray(weightMethod));
+			mv.addObject("totalCost", "Total " + WordUtils.capitalizeFully(weightMethod) + ": "
+					+ path.getHumanReadableCost(weightMethod));
 			mv.addObject("transportMethod", transportMethod.toLowerCase());
 			mv.setViewName("result");
 		} catch (IOException e) {

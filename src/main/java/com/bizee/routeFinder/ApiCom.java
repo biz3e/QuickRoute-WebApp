@@ -38,7 +38,7 @@ public class ApiCom {
 				break;
 			}
 		} catch (Exception e) {
-			System.out.println("Failed");
+			System.out.println("Failed to get distances");
 			return null;
 		}
 
@@ -55,7 +55,7 @@ public class ApiCom {
 				return false;
 			}
 		} catch (Exception e) {
-			System.out.println("Failed");
+			System.out.println("Failed to check place existance");
 			return false;
 		}
 	}

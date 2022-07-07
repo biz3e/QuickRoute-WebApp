@@ -6,10 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import org.apache.commons.text.WordUtils;
-
 import com.bizee.ds.Graph;
-import com.bizee.ds.Node;
 import com.bizee.ds.Path;
 import com.google.maps.model.DistanceMatrixRow;
 
@@ -21,14 +18,16 @@ public class FindRoute {
 	private boolean hasStart;
 	private String startPlace;
 	private String transportMethod;
+	private String weightMethod;
 
-	public FindRoute(String places, String startPlace, String transportMethod) throws IOException {
+	public FindRoute(String places, String startPlace, String transportMethod, String weightMethod) throws IOException {
 		String[] placesArray = places.split(",");
 
+		this.weightMethod = weightMethod;
 		this.transportMethod = transportMethod;
 		this.places = new ArrayList<>();
 		this.places = Arrays.asList(placesArray);
-		this.places.replaceAll(String::trim);
+		this.places.replaceAll(str -> str.trim());
 		this.places.replaceAll(str -> str.toLowerCase());
 
 		ApiCom.initialiseApiCom();
@@ -49,11 +48,11 @@ public class FindRoute {
 		}
 	}
 
-	public String[] start() throws Exception {
+	public Path start() throws Exception {
 		distances = ApiCom.getDistances(getOrigins(), getDestinations(), transportMethod);
 
 		try {
-			graph = new Graph(places, distances);
+			graph = new Graph(places, distances, weightMethod);
 		} catch (Exception e) {
 			throw new Exception("No Valid Routes");
 		}
@@ -65,20 +64,7 @@ public class FindRoute {
 			shortestPath = graph.getShortestPath();
 		}
 
-		return pathToArray(shortestPath);
-	}
-
-	private String[] pathToArray(Path shortestPath) {
-		List<Node<String>> path = shortestPath.getPath();
-
-		String[] pathArray = new String[shortestPath.getPath().size()];
-
-		int i = 0;
-		for (Node<String> n : path) {
-			pathArray[i] = WordUtils.capitalizeFully(n.getLabel());
-			i++;
-		}
-		return pathArray;
+		return shortestPath;
 	}
 
 	public String[] getOrigins() {

@@ -36,7 +36,13 @@
 		  <option value="DRIVING">Driving</option>
 		  <option value="TRANSIT">Transit</option>
 		  <option value="WALKING">Walking</option>
-		</select><br>
+		</select>
+		<br>
+		<label for="WeightMethod">Calculate trip by: </label><br>
+		<select class = "dropbox" name="WeightMethod">
+		  <option value="DURATION">Duration</option>
+		  <option value="DISTANCE">Distance</option>
+		</select>
 		</div>
 		<input type = "submit" class = "button">
 		</form>

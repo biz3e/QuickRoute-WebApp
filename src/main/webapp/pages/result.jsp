@@ -10,14 +10,12 @@
 </head>
 <body>
 	<div class = "wrapper">
-	<h3>The most efficient route by ${transportMethod} is:</h3>
-		<table>
-			<c:forEach var="location" items="${path}" varStatus="count">
-				<tr>
-				<td>${count.count}. ${location}</td>
-				</tr>
-			</c:forEach>
-		</table>
+	<h3>Most efficient route by ${transportMethod}:</h3>
+		<c:forEach var="location" items="${path}" varStatus="count">
+			${count.count}. ${location}<BR>
+			<c:out value="${pathCosts[count.index]}"/><BR>
+		</c:forEach>
+		${totalCost}
 		<form action = "/">
 		<button class="button" type="submit">Reset locations</button>
 		</form>
