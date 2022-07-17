@@ -1,8 +1,6 @@
 package com.bizee.routeFinder;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,15 +18,12 @@ public class FindRoute {
 	private String transportMethod;
 	private String weightMethod;
 
-	public FindRoute(String places, String startPlace, String transportMethod, String weightMethod) throws IOException {
-		String[] placesArray = places.split(",");
+	public FindRoute(List<String> places, String startPlace, String transportMethod, String weightMethod)
+			throws IOException {
 
 		this.weightMethod = weightMethod;
 		this.transportMethod = transportMethod;
-		this.places = new ArrayList<>();
-		this.places = Arrays.asList(placesArray);
-		this.places.replaceAll(str -> str.trim());
-		this.places.replaceAll(str -> str.toLowerCase());
+		this.places = places;
 
 		ApiCom.initialiseApiCom();
 
