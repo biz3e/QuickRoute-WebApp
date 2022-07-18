@@ -35,9 +35,9 @@ public class FindRoute {
 
 		if (startPlace.isBlank()) {
 			hasStart = false;
-		} else if (this.places.contains(startPlace.toLowerCase())) {
+		} else if (this.places.contains(startPlace)) {
 			hasStart = true;
-			this.startPlace = startPlace.toLowerCase();
+			this.startPlace = startPlace;
 		} else {
 			throw new IOException("Invalid Start Location");
 		}

@@ -49,7 +49,10 @@ public class NavigationController {
 		String startPlace;
 		if (startLocation.isBlank() && startCity.isBlank() && startCountry.isBlank()) {
 			startPlace = "";
+		} else if (startLocation.isBlank()) {
+			startPlace = WordUtils.capitalizeFully(startCity.trim() + ", " + startCountry.trim());
 		} else {
+
 			startPlace = WordUtils
 					.capitalizeFully(startLocation.trim() + ", " + startCity.trim() + ", " + startCountry.trim());
 		}
