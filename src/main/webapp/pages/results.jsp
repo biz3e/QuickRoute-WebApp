@@ -34,7 +34,7 @@
 	<header>
 		<div class="navbar">
 			<div class="container flex">
-				<h1 id="logo"><a href="/">Quick Route</a></h1>
+				<h1 id="logo"><a href="quickroute">Quick Route</a></h1>
 			</div>
 		</div>
 	</header>

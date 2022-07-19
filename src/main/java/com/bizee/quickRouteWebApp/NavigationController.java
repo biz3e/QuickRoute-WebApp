@@ -18,7 +18,7 @@ import com.bizee.routeFinder.FindRoute;
 @Controller
 public class NavigationController {
 
-	@RequestMapping(value = { "home", "", "/" })
+	@RequestMapping(value = { "quickroute", "/quickroute", "" })
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView();
 
@@ -27,7 +27,7 @@ public class NavigationController {
 		return mv;
 	}
 
-	@RequestMapping("FindRoute")
+	@RequestMapping("/quickroute/findroute")
 	public ModelAndView findRoute(@RequestParam("location[]") String[] locations,
 			@RequestParam("city[]") String[] cities, @RequestParam("country[]") String[] countries,
 			@RequestParam("startLocation") String startLocation, @RequestParam("startCity") String startCity,
@@ -52,7 +52,6 @@ public class NavigationController {
 		} else if (startLocation.isBlank()) {
 			startPlace = WordUtils.capitalizeFully(startCity.trim() + ", " + startCountry.trim());
 		} else {
-
 			startPlace = WordUtils
 					.capitalizeFully(startLocation.trim() + ", " + startCity.trim() + ", " + startCountry.trim());
 		}

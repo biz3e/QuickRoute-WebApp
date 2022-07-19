@@ -60,7 +60,7 @@ function noValidRouteError() {
 }
 
 function navHome() {
-	window.location.href = "/";
+	window.location.href = "quickroute";
 }
 
 function showResults(path, transportMethod, pathCosts, totalCost) {

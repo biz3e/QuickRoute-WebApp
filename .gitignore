@@ -34,6 +34,8 @@ build/
 
 Secrets.java
 
+bin
+
 /src/test
 
 *.env

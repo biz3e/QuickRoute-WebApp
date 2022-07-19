@@ -15,7 +15,7 @@
 	<header>
 		<div class="navbar">
 			<div class="container flex">
-				<h1 id="logo"><a href="/">Quick Route</a></h1>
+				<h1 id="logo"><a href="quickroute">Quick Route</a></h1>
 			</div>
 		</div>
 	</header>
@@ -27,7 +27,7 @@
 					<h1>Multi-stop trip planner</h1>
 					<h4>Generates the most efficient route to visit each location</h4>
 				</div>
-				<form action="FindRoute" id="form">
+				<form action="quickroute/findroute" id="form">
 					<div id="form-inner">
 						<div id="location-fields">
 							<fieldset id="locations-template" class="locations">
