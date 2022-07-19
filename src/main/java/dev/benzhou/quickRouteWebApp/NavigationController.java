@@ -1,4 +1,4 @@
-package com.bizee.quickRouteWebApp;
+package dev.benzhou.quickRouteWebApp;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bizee.ds.Path;
-import com.bizee.routeFinder.FindRoute;
+import dev.benzhou.ds.Path;
+import dev.benzhou.routeFinder.FindRoute;
 
 @Controller
 public class NavigationController {

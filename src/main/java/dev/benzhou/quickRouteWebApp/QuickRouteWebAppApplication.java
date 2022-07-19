@@ -1,4 +1,4 @@
-package com.bizee.quickRouteWebApp;
+package dev.benzhou.quickRouteWebApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

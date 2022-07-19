@@ -8,9 +8,9 @@
 		<version>2.7.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bizee</groupId>
+	<groupId>dev.benzhou</groupId>
 	<artifactId>quickRouteWebApp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>quickRouteWebApp</name>
 	<description>Quick Route Web Application</description>
 	<properties>

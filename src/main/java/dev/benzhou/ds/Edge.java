@@ -1,4 +1,4 @@
-package com.bizee.ds;
+package dev.benzhou.ds;
 
 import java.util.Objects;
 

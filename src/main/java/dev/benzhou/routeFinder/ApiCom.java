@@ -1,4 +1,4 @@
-package com.bizee.routeFinder;
+package dev.benzhou.routeFinder;
 
 import com.google.maps.DistanceMatrixApi;
 import com.google.maps.FindPlaceFromTextRequest.InputType;

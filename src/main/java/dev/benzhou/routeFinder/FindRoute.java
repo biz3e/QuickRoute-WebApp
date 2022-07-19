@@ -1,12 +1,13 @@
-package com.bizee.routeFinder;
+package dev.benzhou.routeFinder;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import com.bizee.ds.Graph;
-import com.bizee.ds.Path;
 import com.google.maps.model.DistanceMatrixRow;
+
+import dev.benzhou.ds.Graph;
+import dev.benzhou.ds.Path;
 
 public class FindRoute {
 	public static Scanner scanner;
