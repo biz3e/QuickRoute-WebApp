@@ -13,7 +13,7 @@
 	<header>
 		<div class="navbar">
 			<div class="container flex">
-				<h1 id="logo"><a href="quickroute">Quick Route</a></h1>
+				<h1 id="logo"><a href="/quickroute">Quick Route</a></h1>
 			</div>
 		</div>
 	</header>
@@ -23,7 +23,7 @@
 			<div class="container flex">
 				<h1>Something went wrong! </h1>
 				<h2>Our Engineers are on it.</h2>
-				<a href="quickroute">Go Home</a>
+				<a href="/quickroute">Go Home</a>
 			</div>
 		</div>
 	</main>
