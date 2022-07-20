@@ -9,7 +9,7 @@ A multi-stop trip planner created with Java, HTML, CSS.
 * [Setup](#setup)
 
 ## General info
-This project is a personal project of mine. The rational behind creating this was due to my potential upcoming Japan trip where my friends and I found it very annoying and tedious to figure out the most efficient route to visit each of the locations we wanted to explore. 
+This project is a personal project of mine. The rational behind creating this was due to my upcoming Japan trip where my friends and I found it very annoying and tedious to figure out the most efficient route to visit each of the locations we wanted to explore. 
 
 This application aims to solve that problem by taking a list of locations as input and it will output the most efficient route to visit each location.
 
