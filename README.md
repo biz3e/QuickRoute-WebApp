@@ -23,7 +23,7 @@ Project is created with:
 * CSS
 	
  ## Features
-- Takes a user input of locations and generates the most efficient route to visit each location once.
+- Takes a user input of locations and generates the most efficient route to visit all the given locations.
 - The starting location can be chosen by the user or chosen to optimise efficiency.
 - Calculates route based off either duration or distance.
 - Duration/distance values account for different transport methods (Driving, Transit, Walking) as specified by the user.
