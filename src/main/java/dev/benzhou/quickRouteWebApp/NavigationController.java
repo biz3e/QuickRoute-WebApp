@@ -28,32 +28,25 @@ public class NavigationController {
 	}
 
 	@RequestMapping("/quickroute/findroute")
-	public ModelAndView findRoute(@RequestParam("location[]") String[] locations,
-			@RequestParam("city[]") String[] cities, @RequestParam("country[]") String[] countries,
-			@RequestParam("startLocation") String startLocation, @RequestParam("startCity") String startCity,
-			@RequestParam("startCountry") String startCountry, @RequestParam("TransportMethod") String transportMethod,
-			@RequestParam("WeightMethod") String weightMethod) {
+	public ModelAndView findRoute(
+			@RequestParam("location[]") String[] locations,
+			@RequestParam("startLocation") String startLocation,
+			@RequestParam("TransportMethod") String transportMethod,
+			@RequestParam("WeightMethod") String weightMethod
+	) {
 		ModelAndView mv = new ModelAndView();
 
 		List<String> places = new ArrayList<>();
 
 		for (int i = 0; i < locations.length; i++) {
-			if (locations[i].isBlank()) {
-				places.add(WordUtils.capitalizeFully(cities[i].trim() + ", " + countries[i].trim()));
-			} else {
-				places.add(WordUtils
-						.capitalizeFully(locations[i].trim() + ", " + cities[i].trim() + ", " + countries[i].trim()));
+			if (!locations[i].isBlank()) {
+				places.add(WordUtils.capitalizeFully(locations[i].trim()));
 			}
 		}
 
-		String startPlace;
-		if (startLocation.isBlank() && startCity.isBlank() && startCountry.isBlank()) {
-			startPlace = "";
-		} else if (startLocation.isBlank()) {
-			startPlace = WordUtils.capitalizeFully(startCity.trim() + ", " + startCountry.trim());
-		} else {
-			startPlace = WordUtils
-					.capitalizeFully(startLocation.trim() + ", " + startCity.trim() + ", " + startCountry.trim());
+		String startPlace = "";
+		if (!startLocation.isBlank()) {
+			startPlace = WordUtils.capitalizeFully(startLocation.trim());
 		}
 
 		try {

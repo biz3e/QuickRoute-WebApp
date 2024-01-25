@@ -110,6 +110,7 @@ main {
 	background-color: #212121;
 	border: 0.5px solid #3D3D3D;
 	border-radius: 5px;
+	width: 100%;
 }
 
 #form-inner {
@@ -125,13 +126,19 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
+	width: 100%;
 }
 
 .locations, .start-location {
 	border: none;
 	display: flex;
 	justify-content: space-evenly;
-	gap: 10px;	
+	gap: 10px;
+	flex-direction: column;
+}
+
+#start-location {
+	width: 100%;
 }
 
 input[type="text" i] {
@@ -145,7 +152,6 @@ input[type="text" i] {
 	border-radius: 4px;
 	display: inline-block;
 	font-size: 16px;
-	width: 180px;
 }
 
 .tb:focus{

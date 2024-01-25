@@ -32,15 +32,15 @@
 						<div id="location-fields">
 							<fieldset id="locations-template" class="locations">
 								<legend>Enter location:</legend>
-								<input type = "text" class = "tb" name = "location[]" autocomplete = "off" placeholder = "Location name">
-								<input required type = "text" class = "tb" name = "city[]" autocomplete = "off" placeholder = "City*">
-								<input required type = "text" class = "tb" name = "country[]" autocomplete = "off" placeholder = "Country*">
+								<input type = "text" class = "tb" name = "location[]" autocomplete = "off" placeholder = "123 Example Street, Suburb, City 0000, Country">
 							</fieldset>
 							<fieldset class="locations">
 								<legend>Enter location:</legend>
-								<input type = "text" class = "tb" name = "location[]" autocomplete = "off" placeholder = "Location name">
-								<input required type = "text" class = "tb" name = "city[]" autocomplete = "off" placeholder = "City*">
-						    	<input required type = "text" class = "tb" name = "country[]" autocomplete = "off" placeholder = "Country*">
+								<input type = "text" class = "tb" name = "location[]" autocomplete = "off" placeholder = "123 Example Street, Suburb, City 0000, Country">
+							</fieldset>
+							<fieldset class="locations">
+								<legend>Enter location:</legend>
+								<input type = "text" class = "tb" name = "location[]" autocomplete = "off" placeholder = "123 Example Street, Suburb, City 0000, Country">
 							</fieldset>
 						</div>
 						<div>
@@ -50,9 +50,7 @@
 						<div id="start-location">
 							<fieldset class="start-location">
 									<legend>Starting location (optional):</legend>
-									<input type = "text" class = "tb" name = "startLocation" autocomplete = "off" placeholder = "Location name">
-									<input type = "text" class = "tb" name = "startCity" autocomplete = "off" placeholder = "City*">
-									<input type = "text" class = "tb" name = "startCountry" autocomplete = "off" placeholder = "Country*">
+								<input type = "text" class = "tb" name = "location[]" autocomplete = "off" placeholder = "123 Example Street, Suburb, City 0000, Country">
 							</fieldset>
 						</div>
 						<div class="db">

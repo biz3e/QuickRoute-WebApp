@@ -16,11 +16,10 @@ function addLocation() {
 	document.getElementById("location-fields").appendChild(fsClone);
 }
 
-
 function removeLocation() {
 	var fieldset = document.getElementsByClassName("locations");
 	
-	if (fieldset.length > 2){
+	if (fieldset.length > 3){
 		document.getElementById("location-fields").removeChild(fieldset[fieldset.length - 1]);
 	}
 }
